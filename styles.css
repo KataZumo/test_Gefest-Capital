@@ -1,0 +1,669 @@
+/* fonts 'Open Sans' + 'Prosto One' */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Prosto+One&display=swap');
+
+/*variables*/
+:root{
+    /*colors*/
+    --red: #932019;
+    --black-blue: #192D4A;
+    --black-gray: #222222;
+    --black: #000000;
+    --gray: #616161;
+    --white: #ffffff;
+
+    /*font sizes*/
+    --light: 14px;
+    --sm: 16px;
+    --md: 18px;
+    --lg: 20px;
+    --xl: 24px;
+    --title: 64px;
+
+    /*fonts*/
+    --main: 'Prosto One', cursive;
+    --secondary: 'Open Sans', sans-serif;
+}
+
+
+/*reset styles*/
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+body{
+    font-family: var(--main);
+    min-width: 320px;
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    font-size: var(--md);
+}
+
+ul li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--black-blue);
+}
+
+
+/*all styles*/
+.wrapper{
+    max-width: 1921px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.header{
+    display: flex;
+    height: 165px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-logo__left{
+    width: 50%;
+}
+
+.nav{
+    width: 33%;
+    display: flex;
+}
+.nav-list{
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 15% 0 3%;
+    display: flex;
+}
+
+.nav-list__item .nav-list__link{
+    position: relative;
+    font-size: var(--md);
+    transition: .3s;
+}
+
+.nav-list__item .nav-list__link::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0%;
+    transition: .3s;
+    height: 2px;
+    background-color: var(--red);
+    display: block;
+}
+
+.nav-list__item .nav-list__link:hover{
+    color: var(--red);
+}
+
+.nav-list__item .nav-list__link:hover::after{
+    width: 100%;
+}
+
+.contact-button{
+    width: 280px;
+    background-color: var(--red);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 20px;
+    border-radius: 4px;
+    height: 61px;
+    color: var(--white);
+}
+.contact-button{
+    width: 280px;
+    background-color: var(--red);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid var(--red);
+    padding: 20px 20px;
+    border-radius: 4px;
+    height: 61px;
+    color: var(--white);
+    transition: .4s;
+}
+
+.contact-button:hover{
+    background-color: var(--white);
+    color: var(--red);
+}
+
+.contact-button:hover .contact-button__icon path{
+    fill: var(--red);
+}
+
+.main{
+    position: relative;
+    width: 100%;
+}
+.apartment{
+    left: 0;
+    top: 157px;
+    position: absolute;
+    z-index: 10000;
+}
+.apartment-exit__link{
+    display: flex;
+    align-items: center;
+}
+.apartment-exit__text{
+    padding: 0 0 3px 10px;
+    display: inline-block;
+    font-family: var(--secondary);
+}
+.apartment-exit__arrow path{
+    transition: .3s;
+}
+.apartment-exit__link:hover{
+    color: var(--red);
+}
+.apartment-exit__link:hover .apartment-exit__arrow path{
+    stroke: var(--red);
+}
+.apartment__title{
+    padding: 5px 0;
+    font-size: var(--title);
+    color: var(--black-blue);
+}
+.apartment-address-info{
+    padding: 0 0 8px 0;
+    font-family: var(--secondary);
+    font-weight: 600;
+    opacity: 0.5;
+    font-size: var(--xl);
+    color: var(--gray);
+}
+.apartment-address-text{
+    font-family: var(--secondary);
+    font-weight: 600;
+    font-size: var(--xl);
+    line-height: 33px;
+    width: 350px;
+}
+
+
+
+/* slider */
+
+  img {
+    vertical-align: middle;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    margin-left: 600px;
+    position: relative;
+    display: flex;
+    gap: 10px;
+    max-width: 712px;
+    margin: 0 auto;
+    position: relative;
+    flex-direction: column;
+    padding-top: 415px;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 9px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .prev{
+    right: 90px;
+  }
+  /* Position the "next button" to the right */
+  .next {
+    right: 0px;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  
+  /* Container for image text */
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* columns side by side */
+  .column {
+    float: left;
+    width: 70px;
+    justify-content: space-between;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .container{
+    position: relative;
+  }
+  .slider_butons{
+    position: absolute;
+    bottom: -60px;
+    right: 0px;
+  }
+  .container .row {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .demo {
+    opacity: 0.6;
+    height: 70px;
+    object-fit: cover;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+  
+
+
+
+/* end slider  */
+
+
+/* footer */
+
+.apartment-info{
+    background-color: #F2F3F7;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0px 0px 34px rgba(69, 40, 40, 0.04), 0px 4px 14px rgba(148, 148, 148, 0.04);
+    margin-top: 100px;
+    margin-bottom: 75px;
+}
+.apartment-parameters{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    min-width: 577px;
+    align-items: center;
+    padding: 30px 0; 
+}
+.apartrment-contact{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.apartment-contact__name{
+  text-align: right;
+  padding: 0 20px 0 0;
+    width: 200px;
+
+}
+
+
+.column_name{
+    text-align: center;
+    font-size: 16px;
+    font-family: var(--secondary);
+    color: #222222;
+    opacity: 0.5;
+    margin-bottom: 12px;
+}
+.column_value{
+  text-align: center;
+}
+.contact-button__wrapper{
+    width: 280px;
+}
+
+.slider-thumbnails img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    justify-content: space-between;
+    display: flex;
+}
+
+
+/* burger */
+.burger{
+  display: none;
+  position: relative;
+  z-index: 50;
+  align-items: center;
+  justify-content: flex-end;
+  width: 30px;
+  height: 18px;
+}
+
+.burger span{
+  height: 2px;
+  width: 80%;
+  transform: scale(1);
+  background-color: #FAF6F2;
+}
+
+.burger::before, .burger::after{
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #FAF6F2;
+  transition: all 0.3s ease 0s;
+}
+
+.burger::before { top: 0 }
+
+.burger::after { bottom: 0 }
+
+
+/* Добавляем класс active для анимации иконки бургера */
+.burger.active span { transform: scale(0) }
+
+.burger.active::before{
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -50%);
+}
+
+.burger.active::after{
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
+}
+
+
+/*desktop hide*/
+.mobile-apartment__price{
+  display: none;
+}
+.mobile-info__delimiter{
+  display: none;
+}
+.apartment-price{
+  display: none;
+}
+
+@media (max-width: 1479px){
+  .apartment-address{
+    /* display: none; */
+  }
+}
+@media (max-width: 1400px) {
+  
+  .nav{
+    width: 50%;
+  }
+  .nav-list{
+    padding: 0 6% 0 0%;
+  }
+  .apartment-info{
+    padding: 0 15px;
+  }
+  .apartment-info .column_value,
+  .apartment-info .apartment-contact__name {
+    font-size: var(--light);
+  }
+  .parameters__img{
+    width: 60px;
+  }
+  .apartment-info .contact-button{
+    width: 230px;
+  }
+  .apartment-info .contact-button .contact-button__text{
+    font-size: var(--light);
+  }
+  .apartment-parameters{
+    min-width: 400px;
+  }
+  .contact-button__wrapper{
+    width: 230px;
+}
+}
+
+@media (max-width: 1120px) {
+  .header-logo__left{
+    width: 20%;
+}
+  .nav{
+    width: 80%;
+  }
+  .nav-list{
+    padding: 0 6% 0 0%;
+  }
+}
+
+
+
+@media (max-width: 1000px){
+    .apartment-address{
+    display: none;
+  }
+  .apartment{
+    top: 80px;
+  }
+  .container{
+    padding-top: 200px;
+  }
+  .apartment-info{
+    display: block;
+  }
+  .desktop{
+  display: none;
+  }
+  .apartment-parameters{
+    width: 100%;
+  }
+  .apartment-price{
+   width: 60%;
+   font-weight: 600;
+   display: block;
+  }
+  .apartment-price .column_value{
+   text-align: left;
+
+   font-size: var(--xl);
+   font-family: var(--secondary);
+
+  }
+
+.apartment-info__delimiter{
+  display: none;
+}
+.apartment-info__delimiter{
+  display: block;
+}
+.partment-delimener__block{
+  display: block;
+  opacity: 0.3;
+  background-color: var(--black-gray);
+  height: 2px;
+  width: 100%;
+}
+.apartrment-contact{
+  padding: 10px 0;
+}
+.apartment-contact__name{
+  text-align: left;
+}
+.contact-button{
+  height: 48px;
+}
+}
+
+@media (max-width: 850px) {
+  .nav .nav-list__item .nav-list__link{
+    font-size: var(--light);
+  }
+  .nav-list{
+    padding: 0 6% 0 0%;
+  }
+}
+
+/* При разрешении экрана 768px и ниже, выводим на экран иконку бургера */
+@media (max-width: 768px) {
+
+    .apartment-address{
+    display: none;
+  }
+  
+  .container{
+    padding-top: 150px;
+  }
+  .wrapper{
+    padding: 0 30px;
+  }
+  .apartment__title{
+    font-size: 34px;
+  }
+  .burger { display: flex }
+
+  .nav{
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0; bottom: 0; left: 0; right: 0;
+      z-index: 50;
+      overflow-y: auto;
+      padding: 50px 40px;
+      background-color: black;
+      animation: burgerAnimation 0.4s;
+  }
+
+  .nav ul{
+      flex-direction: column;
+      row-gap: 30px;
+  }
+  header .contact-button{
+    display: none;
+  }
+  .apartment-address{
+    display: none;
+  }
+  .info-img_column{
+    display: none;
+  }
+  .info-meter-cost_column{
+    display: none;
+  }
+  .info-price_column .column_name{
+    display: none;
+  }
+}
+
+@media (max-width: 520px){
+  .header{
+    height: 110px;
+  }
+  .wrapper{
+    padding: 0;
+  }
+  .header{
+    padding: 0 14px;
+  }
+  .apartment{
+    left: 14px;
+  }
+  .slider{
+    padding: 248px 14px 0 14px;
+  }
+  .apartment-info{
+    margin-bottom: 0px;
+  }
+  
+  .apartment-parameters{
+    min-width: auto;
+  }
+  .mobile-apartment__price{
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .mobile-apartment__price .apartment-price, .mobile-apartment__price .column_value{
+    display: inline;
+    text-align: center;
+  }
+  .apartment-parameters .apartment-price{
+    display: none;
+  }
+  .apartment-parameters .mobile{
+    display: block;
+  }
+  .mobile-info__delimiter{
+    display: block;
+  }
+  .apartrment-contact{
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .apartment-contact__name{
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0 9px 0;
+  }
+  .apartment-info .contact-button__wrapper{
+    margin: 0 auto;
+  }
+}
+
+
+@keyframes burgerAnimation {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+
+/* / end burger */ 
